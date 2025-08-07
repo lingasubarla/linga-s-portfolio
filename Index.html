@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    
+    
+    Linga's Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- 📞 Contact Button -->
+    <button class="contact-icon" onclick="toggleContact()">📞</button>
+
+    <!-- 👤 Profile Section -->
+    <header>
+      <div class="profile-container" onclick="showUploadMessage()">
+        <div class="profile-placeholder">👤</div>
+        <p class="upload-text">Profile</p>
+      </div>
+      <h1>Linga Subarla</h1>
+      <p>Aspiring Software Engineer</p>
+      <p>Student at GCT,Coimbatore</p>
+    </header>
+
+    <!-- 🛠️ Skills Section -->
+    <section>
+      <h2 onclick="askUpdate()">My Skills</h2>
+    </section>
+
+    <!-- 🚀 Recent Projects Section -->
+    <section>
+      <h2 onclick="askUpdate()">Recent Projects</h2>
+    </section>
+
+    <!-- 🏆 Achievements Section -->
+    <section>
+      <h2 onclick="askUpdate()">Achievements</h2>
+    </section>
+  </div>
+
+  <!-- 📬 Contact Info Popup -->
+  <div class="contact-popup" id="contactPopup">
+    <span class="close-btn" onclick="toggleContact()">×</span>
+    <h3>Contact Me</h3>
+    <p>📱 +91-9788384643</p>
+    <p>📧 lingasubarla@gmail.com</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

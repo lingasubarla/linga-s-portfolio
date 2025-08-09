@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Linga's Portfolio</title>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .profile-container {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background-color: #ddd;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .profile-placeholder {
+      font-size: 90px;
+    }
+
+    .upload-text {
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    /* 📞 Contact Icon */
+    .contact-icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 12px 14px;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    }
+
+    /* 📬 Popups (Contact, Skills) */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      background-color: white;
+      padding: 20px;
+      border: 2px solid #25d366;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      z-index: 10;
+      text-align: center;
+      width: 300px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 6px;
+      right: 12px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    /* 🎯 Buttons */
+    .section-btn {
+      display: block;
+      width: 100%;
+      background-color: #007BFF;
+      color: white;
+      padding: 15px;
+      margin: 10px 0;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .section-btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* 🎯 Sub Buttons (hidden by default) */
+    .skills-sub {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.4s ease-out;
+    }
+
+    .skills-sub.show {
+      max-height: 200px;
+    }
+
+    .sub-btn {
+      display: block;
+      width: 90%;
+      background-color: #28a745;
+      color: white;
+      padding: 12px;
+      margin: 8px auto;
+      font-size: 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .sub-btn:hover {
+      background-color: #1e7e34;
+    }
+
+    /* List inside popup */
+    ul {
+      text-align: left;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- 📞 Contact Button -->
+    <button class="contact-icon" onclick="togglePopup('contactPopup')">📞</button>
+
+    <!-- 👤 Profile Section -->
+    <header>
+      <div class="profile-container" onclick="showUploadMessage()">
+        <div class="profile-placeholder">👤</div>
+        <p class="upload-text">Profile</p>
+      </div>
+      <h1>Hi, I'm Linga Subarla</h1>
+      <p>Aspiring Software Engineer</p>
+      <p>GCT,Coimbatore</p>
+    </header>
+
+    <!-- 🎯 Main Buttons -->
+    <button class="section-btn" onclick="toggleSkills()">My Skills</button>
+    <div class="skills-sub" id="skillsDropdown">
+      <button class="sub-btn" onclick="togglePopup('hardSkillsPopup')">Hard Skills</button>
+      <button class="sub-btn" onclick="togglePopup('softSkillsPopup')">Soft Skills</button>
+    </div>
+
+    <button class="section-btn" onclick="askUpdate('Recent Projects')">Recent Projects</button>
+    <button class="section-btn" onclick="askUpdate('Achievements')">Achievements</button>
+  </div>
+
+  <!-- 📬 Contact Info Popup -->
+  <div class="popup" id="contactPopup">
+    <span class="close-btn" onclick="togglePopup('contactPopup')">×</span>
+    <h3>Contact Me</h3>
+    <p>📱 +91 9788384643</p>
+    <p>📧 lingasubarla@gmail.com</p>
+  </div>
+
+  <!-- 💻 Hard Skills Popup -->
+  <div class="popup" id="hardSkillsPopup">
+    <span class="close-btn" onclick="togglePopup('hardSkillsPopup')">×</span>
+    <h3>Hard Skills</h3>
+    <ul>
+      <li>C Programming</li>
+      <li>Python</li>
+      <li>Java</li>
+    </ul>
+  </div>
+
+  <!-- 🌟 Soft Skills Popup -->
+  <div class="popup" id="softSkillsPopup">
+    <span class="close-btn" onclick="togglePopup('softSkillsPopup')">×</span>
+    <h3>Soft Skills</h3>
+    <ul>
+      <li>Adaptability</li>
+      <li>Problem Solving</li>
+      <li>Creativity</li>
+    </ul>
+  </div>
+
+  <script>
+    function togglePopup(id) {
+      const popup = document.getElementById(id);
+      popup.style.display = (popup.style.display === "block") ? "none" : "block";
+    }
+
+    function askUpdate(section) {
+      alert(`⚙️ Please update your "${section}" section with your real data.`);
+    }
+
+    function showUploadMessage() {
+      alert("📸 Upload your photo here!");
+    }
+
+    function toggleSkills() {
+      const dropdown = document.getElementById("skillsDropdown");
+      dropdown.classList.toggle("show");
+    }
+  </script>
+</body>
+</html>

@@ -1,95 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Portfolio - Linga Subarla</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linga Portfolio</title>
 
-<style>
-  body {
-    background-color: white;
-    color: black;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
-  img {
-    margin-top: 20px;
-    border-radius: 10px;
-    width: 200px;
-    height: auto;
-  }
-  h1 {
-    color: black;
-  }
-  h2, h3 {
-    color: black;
-  }
-  p {
-    width: 90%;
-    margin: 10px auto;
-    line-height: 1.5;
-  }
-  hr {
-    margin: 20px auto;
-    width: 80%;
-    border: 1px solid white;
-  }
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  li {
-    margin: 5px 0;
-  }
-  #contact {
-    margin-top: 20px;
-  }
-  button {
-    background-color: blue;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  button:hover {
-    background-color: darkblue;
-  }
-</style>
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#1f2940;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:40px;
+        }
+
+        .resume{
+            width:1000px;
+            background:#f3f3f3;
+            display:grid;
+            grid-template-columns:300px 1fr;
+            box-shadow:0px 10px 30px rgba(0,0,0,0.4);
+        }
+
+        /* LEFT SIDE */
+
+        .left{
+            background:#f8f8f8;
+            padding:25px;
+            border-right:5px solid #e5e5e5;
+        }
+
+        .profile img{
+            width:100%;
+            border:8px solid #e5e5e5;
+        }
+
+        .section{
+            margin-top:30px;
+        }
+
+        .section h2{
+            font-size:28px;
+            margin-bottom:15px;
+            color:#111;
+        }
+
+        .section p{
+            font-size:15px;
+            line-height:1.7;
+            color:#444;
+            text-align:justify;
+        }
+
+        .skills li{
+            list-style:none;
+            margin-bottom:18px;
+            font-size:17px;
+            font-weight:bold;
+        }
+
+        .dots{
+            color:black;
+            letter-spacing:4px;
+            font-size:20px;
+        }
+
+        /* RIGHT SIDE */
+
+        .right{
+            padding:40px;
+        }
+
+        .name h1{
+            font-size:55px;
+            font-weight:900;
+            color:#000;
+        }
+
+        .name span{
+            font-weight:300;
+        }
+
+        .name h3{
+            font-size:28px;
+            font-weight:400;
+            margin-top:5px;
+            color:#333;
+        }
+
+        .contact{
+            margin-top:20px;
+            line-height:2;
+            color:#444;
+            font-size:17px;
+        }
+
+        hr{
+            margin:30px 0;
+            border:none;
+            border-top:3px solid #ddd;
+        }
+
+        .right-section h2{
+            font-size:32px;
+            margin-bottom:20px;
+            color:#111;
+        }
+
+        .item{
+            margin-bottom:30px;
+        }
+
+        .item h3{
+            font-size:22px;
+            color:#222;
+        }
+
+        .item h4{
+            font-size:18px;
+            color:#666;
+            margin:5px 0;
+        }
+
+        .item p{
+            margin-top:10px;
+            line-height:1.7;
+            color:#444;
+        }
+
+        table{
+            width:100%;
+        }
+
+        td{
+            padding:12px;
+            vertical-align:top;
+            font-size:17px;
+        }
+
+        .year{
+            width:130px;
+            font-weight:bold;
+            color:#222;
+        }
+
+    </style>
 </head>
 
 <body>
-  <img src="linga.jpg" alt="Sakthi Photo">
-  <h1>Myself Linga Subarla</h1>
 
-  <h2>About Myself:</h2>
-  <p>
-  I am <strong>Linga Subarla</strong>, an aspiring <strong>Software Engineer</strong> from Coimbatore.  
-      I’m currently studying <strong>2nd year B.E. CSE</strong> at <strong>Government College of Technology (GCT), Coimbatore</strong>.<br><br>
-      I’m passionate about <strong>App Development</strong> and <strong>Web Development</strong>, 
-      and I love turning creative ideas into real digital products.
-    </p>
-  </p>
+    <div class="resume">
 
-  <hr>
-  <h2>SKILLS</h2>
-  <ul>
-    <li>C</li>
-    <li>Java</li>
-    <li>HTML & CSS</li>
-    <li>JavaScript</li>
-    <li>Python</li>
-  </ul>
+        <!-- LEFT SIDE -->
 
-  <hr>
-  <div id="contact">
-    <h2>CONTACT</h2>
-    <p><i>Phone number:</i> <span id="number">+91 9788384643</span></p>
-    <p><i>Email:</i> <span id="number">lingasubarla.m@gmail.com</span></p>
-    
-  </div>
+        <div class="left">
+
+            <div class="profile">
+                <img src="linga.png.png" alt="Profile Image">
+            </div>
+
+            <div class="section">
+                <h2>ABOUT ME</h2>
+
+                <p>
+                    Aspiring Software Engineer currently pursuing a Bachelor of Engineering 
+                    in Computer Science and Engineering at Government College of Technology. 
+                    Passionate about App Development and Web Development, with strong interest 
+                    in building innovative digital solutions.
+                </p>
+            </div>
+
+            <div class="section">
+
+                <h2>SKILLS</h2>
+
+                <ul class="skills">
+
+                    <li>
+                        HTML
+                        <div class="dots">● ● ● ● ●</div>
+                    </li>
+
+                    <li>
+                        CSS
+                        <div class="dots">● ● ● ● ●</div>
+                    </li>
+
+                    <li>
+                        JavaScript
+                        <div class="dots">● ● ● ○ ○</div>
+                    </li>
+
+                    <li>
+                        Java
+                        <div class="dots">● ● ● ● ○</div>
+                    </li>
+
+                    <li>
+                        C Programming
+                        <div class="dots">● ● ● ● ○</div>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+
+        <div class="right">
+
+            <div class="name">
+
+                <h2>LINGA SUBARLA</h2>
+
+                <h3>Java Full Stack Developer</h3>
+
+            </div>
+
+            <div class="contact">
+
+                📍 10, Periyar Ramasamy Street, PN Pudhur, Coimbatore - 641013 <br>
+
+                📞 +91 9788384643 <br>
+
+                📧 lingasubarla.m@gmail.com
+
+            </div>
+
+            <hr>
+
+            <div class="right-section">
+
+                <h2>EDUCATION</h2>
+
+                <table>
+
+                    <tr>
+                        <td class="year">2024</td>
+
+                        <td>
+                            <b>Municipal Hr Sec School</b><br>
+                            Pudhuramakrishnapuram, Tirupur - 641607
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="year">2026 - Present</td>
+
+                        <td>
+                            <b>Government College Of Technology</b><br>
+                            Coimbatore - 641013
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+            <hr>
+
+            <div class="right-section">
+
+                <h2>EXPERIENCE</h2>
+
+                <div class="item">
+
+                    <h3>Intern - MainCrafts Technology</h3>
+
+                    <h4>2026 | Java Full Stack Developer</h4>
+
+                    <p>
+                        Worked on frontend and backend web applications using 
+                        Java Full Stack technologies and improved problem-solving skills.
+                    </p>
+
+                </div>
+
+                <div class="item">
+
+                    <h3>Editor - IIC Club at GCT</h3>
+
+                    <h4>2026</h4>
+
+                    <p>
+                        Managed editing and media-related activities for college events 
+                        and club promotions.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </body>
 </html>
